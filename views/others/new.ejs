@@ -1,0 +1,30 @@
+<%- include("../partials/header.ejs")%>
+<%- include("../partials/navbar.ejs")%>
+<div class="container-sm" style="margin-top: 5rem;">
+<form method="POST" action="/product/new" >
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" name="prdoduct[name]" placeholder="Product Name" >
+      
+    </div>
+    <div class="mb-3">
+      <label for="image" class="form-label">Image</label>
+      <input type="text" class="form-control" id="image" name="prdoduct[img]" placeholder="Product Image Link" >
+    </div>
+    <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input type="number" class="form-control" id="price" name="prdoduct[value]" placeholder="Product Price" >
+      </div>
+      <div class="mb-3">
+        <label for="type" class="form-label">Series</label>
+        <input type="text" class="form-control" id="type" name="prdoduct[type]" placeholder="Product type" >
+      </div>
+      <div class="mb-3">
+        <label for="desc" class="form-label">Description</label>
+        <textarea class="form-control" name="prdoduct[desc]" id="desc" cols="30" rows="5"></textarea>
+      </div>
+   
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<%- include("../partials/footer.ejs")%>

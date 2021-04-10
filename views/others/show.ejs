@@ -1,0 +1,43 @@
+
+    <%- include("../partials/header.ejs")%>
+    <%- include("../partials/navbar.ejs")%>
+    
+    <div class="body" style="margin-top:50px;text-align: center;width: 100%;background-image: url('https://images.unsplash.com/photo-1561130294-5b4154683c41?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80');background-size: contain;">
+        <p class="h1" style="background-color: rgba(0, 0, 0, 0.418);"><del>pReDaToR X</del></p>
+    
+    <section class="card-container">
+        <%for(let product of products){%>
+            <%if(product.type=="shoes"){%>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card" >
+                  <img src="<%= product.img %>" class="card-img-top" style="max-height:360px;" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= product.name %></h5>
+                    <p class="card-text"><%= product.desc.substring(0,70) %></p>
+                    <h5 class="card-title">RS. <%= product.value %> /.00</h5>
+                    <a href="/products/<%= product._id %>" class="btn btn-info">View Product</a>
+                  </div>
+              </div>
+            </div><%}%>
+          <%}%>
+        </section>
+        <p class="h1" style="background-color: rgba(0, 0, 0, 0.418);"><del> lIgHt X</del></p>
+        <section class="card-container thunder">
+            <%for(let product of products){%>
+                <%if(product.type=="ball"){%>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                  <div class="card" >
+                      <img src="<%= product.img %>" class="card-img-top" style="max-height: 360px;" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title"><%= product.name %></h5>
+                        <p class="card-text"><%= product.desc.substring(0,70) %></p>
+                        <h5 class="card-title">RS. <%= product.value %> /.00</h5>
+                        <a href="/products/<%= product._id %>" class="btn btn-info">View Product</a>
+                      </div>
+                  </div>
+                </div><%}%>
+              <%}%>
+            </section>
+    </div>
+    <%- include("../partials/footer.ejs")%>
+      
