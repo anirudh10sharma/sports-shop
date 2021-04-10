@@ -11,9 +11,13 @@ const User=require("./models/user");
 const reviewRoutes = require('./routers/reviews/review');
 const authRoutes = require('./routers/auth/auth');
 const cartRoutes = require('./routers/cart/cart');
+const http = require('http');
 
 
 
+const app=express();
+
+const server = http.Server(app);
 
 //lockit1234
 const awai =async ()=>{
@@ -33,7 +37,7 @@ await mongoose.connect("mongodb+srv://anirudhsharma:lockit1234@eccomerce.u3kqn.m
 
 
 
-const app=express();
+
 app.use(express.urlencoded({ extended: true }));
 app.use(session({
     secret:"thisisverygood",
